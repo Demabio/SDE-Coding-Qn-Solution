@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MICROCAP_HOLDSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="SUBCOUNTY">
+    <Key>
+      <PropertyRef Name="SubCountyID" />
+    </Key>
+    <Property Name="SubCountyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubCountyName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CountyID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONSTITUENCY">
+    <Key>
+      <PropertyRef Name="CONSTITUENCY_ID" />
+      <PropertyRef Name="CONSTITUENCY_NAME" />
+    </Key>
+    <Property Name="CONSTITUENCY_ID" Type="Int32" Nullable="false" />
+    <Property Name="CONSTITUENCY_NAME" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COUNTY_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WARD">
+    <Key>
+      <PropertyRef Name="WARD_ID" />
+      <PropertyRef Name="WARD_NAME" />
+    </Key>
+    <Property Name="WARD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WARD_NAME" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COUNTY_ID" Type="Int32" />
+    <Property Name="CONSTITUENCY_ID" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="MICROCAP_HOLDSEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SUBCOUNTies" EntityType="Self.SUBCOUNTY" />
+    <EntitySet Name="CONSTITUENCies" EntityType="Self.CONSTITUENCY" />
+    <EntitySet Name="WARDS" EntityType="Self.WARD" />
+  </EntityContainer>
+</Schema>

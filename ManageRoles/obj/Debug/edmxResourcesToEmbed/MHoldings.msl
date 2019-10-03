@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MICROCAP_HOLDSModelStoreContainer" CdmEntityContainer="MICROCAP_HOLDSEntities3">
+    <EntitySetMapping Name="SUBCOUNTies">
+      <EntityTypeMapping TypeName="MICROCAP_HOLDSModel.SUBCOUNTY">
+        <MappingFragment StoreEntitySet="SUBCOUNTY">
+          <ScalarProperty Name="SubCountyID" ColumnName="SubCountyID" />
+          <ScalarProperty Name="SubCountyName" ColumnName="SubCountyName" />
+          <ScalarProperty Name="CountyID" ColumnName="CountyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONSTITUENCies">
+      <EntityTypeMapping TypeName="MICROCAP_HOLDSModel.CONSTITUENCY">
+        <MappingFragment StoreEntitySet="CONSTITUENCY">
+          <ScalarProperty Name="CONSTITUENCY_ID" ColumnName="CONSTITUENCY_ID" />
+          <ScalarProperty Name="CONSTITUENCY_NAME" ColumnName="CONSTITUENCY_NAME" />
+          <ScalarProperty Name="COUNTY_ID" ColumnName="COUNTY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WARDS">
+      <EntityTypeMapping TypeName="MICROCAP_HOLDSModel.WARD">
+        <MappingFragment StoreEntitySet="WARDS">
+          <ScalarProperty Name="WARD_ID" ColumnName="WARD_ID" />
+          <ScalarProperty Name="WARD_NAME" ColumnName="WARD_NAME" />
+          <ScalarProperty Name="COUNTY_ID" ColumnName="COUNTY_ID" />
+          <ScalarProperty Name="CONSTITUENCY_ID" ColumnName="CONSTITUENCY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

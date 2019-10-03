@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MICROCAP_HOLDSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MICROCAP_HOLDS.dbo.CONSTITUENCY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CONSTITUENCY">
+    <Key>
+      <PropertyRef Name="CONSTITUENCY_ID" />
+      <PropertyRef Name="CONSTITUENCY_NAME" />
+    </Key>
+    <Property Name="CONSTITUENCY_ID" Type="int" Nullable="false" />
+    <Property Name="CONSTITUENCY_NAME" Type="nvarchar" MaxLength="120" Nullable="false" />
+    <Property Name="COUNTY_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="SUBCOUNTY">
+    <Key>
+      <PropertyRef Name="SubCountyID" />
+    </Key>
+    <Property Name="SubCountyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubCountyName" Type="nvarchar" MaxLength="200" />
+    <Property Name="CountyID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MICROCAP_HOLDS.dbo.WARDS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="WARDS">
+    <Key>
+      <PropertyRef Name="WARD_ID" />
+      <PropertyRef Name="WARD_NAME" />
+    </Key>
+    <Property Name="WARD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WARD_NAME" Type="nvarchar" MaxLength="120" Nullable="false" />
+    <Property Name="COUNTY_ID" Type="int" />
+    <Property Name="CONSTITUENCY_ID" Type="int" />
+  </EntityType>
+  <EntityContainer Name="MICROCAP_HOLDSModelStoreContainer">
+    <EntitySet Name="SUBCOUNTY" EntityType="Self.SUBCOUNTY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONSTITUENCY" EntityType="Self.CONSTITUENCY" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CONSTITUENCY].[CONSTITUENCY_ID] AS [CONSTITUENCY_ID], 
+    [CONSTITUENCY].[CONSTITUENCY_NAME] AS [CONSTITUENCY_NAME], 
+    [CONSTITUENCY].[COUNTY_ID] AS [COUNTY_ID]
+    FROM [dbo].[CONSTITUENCY] AS [CONSTITUENCY]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WARDS" EntityType="Self.WARDS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [WARDS].[WARD_ID] AS [WARD_ID], 
+    [WARDS].[WARD_NAME] AS [WARD_NAME], 
+    [WARDS].[COUNTY_ID] AS [COUNTY_ID], 
+    [WARDS].[CONSTITUENCY_ID] AS [CONSTITUENCY_ID]
+    FROM [dbo].[WARDS] AS [WARDS]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,2 @@
+D:\Lion\Elephant\Elephant\ManageRoles\obj\Debug\ManageRoles.csprojAssemblyReference.cache
+D:\Lion\Elephant\Elephant\ManageRoles\obj\Debug\ManageRoles.csproj.CoreCompileInputs.cache

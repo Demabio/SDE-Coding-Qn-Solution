@@ -1,0 +1,11 @@
+AccountNo,AccountType,ItemName,NatureOfAccount,BranchID
+SB100,5,Cemes-Franchise Capital Reserve,2,24
+NB100,1,Likoni Branch Capital Reserve,1,24
+SP100,2,Keren Branch Suspense A/C,2,23
+KRN100,2,Karen Disbursment A/C,2,23
+M200,5,C-Franchise Mpesa Bulk A/C,2,24
+NB300,5,Manyatta Branch Capital  Reserve A/C,2,24
+J200,3,Cemes-Franchise Joining Fee A/C,2,24
+R100,4,CM_Franchise Rent A/C,2,24
+M0001,5,Manyatta Office Rent,1,25
+CMLGLP0001,1,Head office-Gross Loan Portfolio,2,24
